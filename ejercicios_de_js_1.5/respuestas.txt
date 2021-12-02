@@ -1,0 +1,46 @@
+
+1)¿En qué parte del código se genera un closure?.¿Por qué?.
+Se genera en el archivo JS. En las lineas 6, 7 y 8. Son las funciones internas que permiten cambiar el tamaño del texto. La funcion exterior seria setClicks().
+
+2)¿En qué parte del código se establece que al hacer click sobre el elemento con id fuente-8 se cambie 
+el tamaño de las fuentes de la página?.
+Tengo entendido que en "<body onload="setClicks()">". Aunque no entiendo como bien funciona, se que al hacer click como que le pasas el id de 
+alguna manera a la funcion y ejecuta una de esas lineas, o las carga por separado a todas en distintos bodys y cuando haces clicks te cambia
+al id en cual estas haciendo click.
+
+3)Supone que eliminamos la función setClicks y dejamos su código “libre” dentro de las etiquetas 
+<script> … </script>. ¿Qué mensaje de error te muestra la consola de depuración? 
+Uncaught ReferenceError: setClicks is not defined
+    at onload (ejercicio_1.5.html:7)
+
+(Activa la consola si no la tienes activada) ¿Por qué aparece ese mensaje de error?. Porque la funcion no esta definida, la busca por su nombre 
+y no la encuentra.
+
+4)¿Debemos escribir document.getElementById('fuente-8').onclick = size8; 
+ó document.getElementById('fuente-8').onclick = size8();?. ¿Por qué?.
+Seria la primera opcion ya que es una variable que tiene seteada la funcion con sun size. No es necesario que usese los parentisis ya que no
+le pasas nada por parametro.
+
+5)Supón que al cargar la página queremos que el tamaño inicial de fuente sea 8 y para ello nos valemos de 
+la función setClicks. ¿Debemos escribir dentro de esta función size8; ó size8();?. ¿Por qué?.
+Seria size8. Para que el valor devuelto por la funcion se seteado en la variable.
+
+6)Las closures no siempre son necesarias, incluso a veces se generan involuntariamente o innecesariamente 
+consumiendo recursos del sistema que podrían ahorrarse.
+¿Qué ventajas le ves al uso de closures en este código?. ¿Y qué inconvenientes?.
+La ventaja es que podes cambiar el tamaño del a fuente, sin tener que poner mas lienas de codigo en Css, simplemente le pasas un valor y lo cambia.
+El inconveniente que tiene, es que, usas varias variables, con una sola variable que mute, creo que seria lo mejor. O simplemente llamar la funcion y pasarle
+el size. Nose si la mejor opcion seria, "document.getElementById('fuente-8').onclick = cambiarDimensionFuente(8);"?. Duda existencial.
+
+7)Reescribí el código (hacelo como mejor creas cambiando todo aquello que consideres necesario) 
+de forma que obtengas el mismo resultado pero sin hacer uso de closures.
+
+
+
+
+
+
+
+
+
+
